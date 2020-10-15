@@ -3,44 +3,44 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://uvtechnolab.github.io/categories/</loc>
+    <loc>https://uvtechnolab.github.io/uvhugo/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://uvtechnolab.github.io/fr/categories/"
+                href="https://uvtechnolab.github.io/uvhugo/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://uvtechnolab.github.io/categories/"
+                href="https://uvtechnolab.github.io/uvhugo/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://uvtechnolab.github.io/</loc>
+    <loc>https://uvtechnolab.github.io/uvhugo/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://uvtechnolab.github.io/fr/"
+                href="https://uvtechnolab.github.io/uvhugo/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://uvtechnolab.github.io/"
+                href="https://uvtechnolab.github.io/uvhugo/"
                 />
   </url>
   
   <url>
-    <loc>https://uvtechnolab.github.io/tags/</loc>
+    <loc>https://uvtechnolab.github.io/uvhugo/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://uvtechnolab.github.io/fr/tags/"
+                href="https://uvtechnolab.github.io/uvhugo/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://uvtechnolab.github.io/tags/"
+                href="https://uvtechnolab.github.io/uvhugo/tags/"
                 />
   </url>
   
