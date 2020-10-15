@@ -3,44 +3,44 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://uvtechnolab.github.io/categories/</loc>
+    <loc>http://examplesite.org/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://uvtechnolab.github.io/fr/categories/"
+                href="http://examplesite.org/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://uvtechnolab.github.io/categories/"
+                href="http://examplesite.org/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://uvtechnolab.github.io/</loc>
+    <loc>http://examplesite.org/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://uvtechnolab.github.io/fr/"
+                href="http://examplesite.org/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://uvtechnolab.github.io/"
+                href="http://examplesite.org/"
                 />
   </url>
   
   <url>
-    <loc>https://uvtechnolab.github.io/tags/</loc>
+    <loc>http://examplesite.org/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://uvtechnolab.github.io/fr/tags/"
+                href="http://examplesite.org/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://uvtechnolab.github.io/tags/"
+                href="http://examplesite.org/tags/"
                 />
   </url>
   
