@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://uvtechnolab.github.io/uvhugo/categories.html</loc>
+    <loc>https://uvtechnolab.github.io/uvhugo/categories/</loc>
   </url>
   
   <url>
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://uvtechnolab.github.io/uvhugo/tags.html</loc>
+    <loc>https://uvtechnolab.github.io/uvhugo/tags/</loc>
   </url>
   
 </urlset>
