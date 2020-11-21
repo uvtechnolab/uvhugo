@@ -1,8 +1,0 @@
-#!/bin/sh
-USER=u1118-6d786b3pn2w5
-HOST=tesuqa.com             
-DIR=my/directory/to/topologix.fr/   # the directory where your web site files should go
-
-hugo && rsync -avz --delete public/ ${USER}@${HOST}:~/${DIR}
-
-exit 0

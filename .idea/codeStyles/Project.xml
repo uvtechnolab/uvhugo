@@ -1,8 +1,0 @@
-<component name="ProjectCodeStyleConfiguration">
-  <code_scheme name="Project" version="173">
-    <ScalaCodeStyleSettings>
-      <option name="SCALAFMT_CONFIG_PATH" value="D:\Work\05_tesuqa\201910 REstore\.scalafmt.conf" />
-      <option name="FORMATTER" value="1" />
-    </ScalaCodeStyleSettings>
-  </code_scheme>
-</component>
