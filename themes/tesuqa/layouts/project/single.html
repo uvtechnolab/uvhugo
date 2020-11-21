@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+<!-- event single -->
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <!-- event image -->
+      <div class="col-12 mb-4 text-center">
+        <img style="max-width: 100%;height: auto;" src="{{ .Params.Images | relURL }}" alt="{{ .Title }}" class="img-fluid w-70">
+      </div>
+    </div>
+    <!-- event details -->
+    <div class="row">
+      <div class="col-12 content">
+        {{ .Content }}
+      </div>
+    </div>
+      <!-- border -->
+      <div class="col-12 mt-4 order-4">
+        <div class="border-bottom border-primary"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /event single -->
+
+{{ end }}

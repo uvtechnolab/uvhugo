@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+<!-- courses -->
+<section class="section">
+  <div class="container">
+    <!-- course list -->
+
+    <div class="row justify-content-center">
+    <div class="col-sm-12 py-3">
+      <h3 class="text-center">PLANNED TRAININGS</h3>
+    </div>
+      <!-- course item -->
+      
+	  {{ range .Data.Pages }}
+      {{ if eq .Params.course_type "planned trainings"}}
+      <div class="col-lg-4 col-sm-6 mb-5">
+        {{ .Render "course" }}
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+    <div class="row justify-content-center">
+    <div class="col-sm-12 py-3">
+      <h3 class="text-center">TESUQA CAN PROVIDE YOU THESE TRAININGS</h3>
+	  <center><p>Feel free to contact us for more information if you want to book an in-house training.</p></center>
+    </div>
+      <!-- course item -->
+      
+      {{ range .Data.Pages }}
+      {{ if eq .Params.course_type "available trainings"}}
+      <div class="col-lg-4 col-sm-6 mb-5">
+        {{ .Render "course" }}
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+    <!-- /course list -->
+  </div>
+</section>
+<!-- /courses -->
+
+{{ end }}
