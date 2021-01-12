@@ -1,0 +1,232 @@
+{{ define "main" }}
+
+<!-- section -->
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 px-0">
+        <!-- course thumb -->
+        <img style="height: 100%;object-fit: cover;" src="{{ .Params.Image | relURL }}"
+          class="img-fluid w-100">
+      </div>
+    </div>
+    <!-- course info -->
+    <div class="row align-items-center pt-3 mb-5 bg-course-info">
+      <div class="col-sm-9">
+        <h2 class="fs-30">{{ .Title }}</h2>
+      </div>
+      <div class="col-sm-3 ">
+        <ul class="info-list pl-0 text-xl-left">
+          
+          <li class="my-2">
+            <div class="d-flex">
+              <!-- <i class="ti-wallet text-primary icon-md mr-2"></i> -->
+              <div class="text-left">
+                <h6 class="mb-0">{{ "Price :" }} <span class="text-color">{{ .Params.price }}</span></h6>
+              </div> 
+            </div>
+          </li>
+          <li class="my-2">
+            <div class="d-flex">
+              <!-- <i class="ti-wallet text-primary icon-md mr-2"></i> -->
+              <div class="text-left">
+                <h6 class="mb-0">{{ "Exam :" }} <span class="text-color">{{ .Params.exam }}</span></h6>
+              </div>
+            </div>
+          </li>
+          <li class="my-2">
+            <div class="d-flex">
+              <!-- <i class="ti-wallet text-primary icon-md mr-2"></i> -->
+              <div class="text-left">
+                <h6 class="mb-0">{{ "Length :" }} <span class="text-color">{{ .Params.length }}</span></h6>
+              </div>
+            </div>
+          </li>
+          <li class="my-2">
+            <div class="d-flex">
+              <!-- <i class="ti-wallet text-primary icon-md mr-2"></i> -->
+              <div class="text-left">
+                <h6 class="mb-0">{{ "Hours :" }} <span class="text-color">{{ .Params.hours }}</span></h6>
+              </div>
+            </div>
+          </li>
+          <li class="my-2">
+            <div class="d-flex">
+              <!-- <i class="ti-wallet text-primary icon-md mr-2"></i> -->
+              <div class="text-left">
+                <h6 class="mb-0">{{ "Category :" }} <span class="text-color">{{ .Params.category }}</span></h6>
+              </div>
+            </div>
+          </li>
+          <li class="my-2">
+            <div class="d-flex">
+              <!-- <i class="ti-wallet text-primary icon-md mr-2"></i> -->
+              <div class="text-left">
+                <h6 class="mb-0">{{ "Contact :" }} <a href="mailto:{{ .Params.contact }}" class="text-primary">{{ .Params.contact }}</a></h6>
+              </div>
+            </div>
+          </li>
+          {{ if .Params.location }}
+          <li class="my-2">
+            <div class="d-flex">
+              <!-- <i class="ti-wallet text-primary icon-md mr-2"></i> -->
+              <div class="text-left">
+                <h6 class="mb-0">{{ "Location :" }} <span class="text-color">{{ .Params.location }}</span></h6>
+              </div>
+            </div>
+          </li>
+          {{ end }}
+          {{ if .Params.course_date }}
+
+          <li class="my-2">
+            <div class="d-flex">
+              <!-- <i class="ti-wallet text-primary icon-md mr-2"></i> -->
+              <div class="text-left">
+                <h6 class="mb-0">{{ "Date :" }} <span class="text-color">{{ .Params.course_date }}</span></h6>
+              </div>
+            </div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <!-- <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
+        <a href="{{ .Params.Apply_url | safeURL }}" class="btn btn-primary">{{ i18n "apply_now" }}</a>
+      </div> -->
+      <!-- border -->
+      <div class="col-12 mt-4 order-4">
+        <div class="border-bottom border-primary"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /section -->
+<div id="rs-courses" class="rs-courses sec-color sec-spacer pb-45">
+	<div class="rs-courses-details">
+		<div class="container">	
+			<!-- Courses Details Start -->
+			<div class="rs-courses-details">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="course-des-tabs">
+										<div class="tab-btm">
+											<!-- Nav tabs -->
+											<div class="tabs-wrapper">
+												<ul class="nav classic-tabs tabs-cyan" role="tablist">
+													{{range $index, $element := .Params.course_details}}
+														<li class="nav-item">
+															<a class='nav-link waves-light {{if eq $index 0}} active{{end}}' data-toggle="tab" href='#{{replaceRE "(\\s)" "" .name | lower}}' role="tab">{{ .name }}</a>
+														</li>
+													{{ end }}
+												</ul>
+											</div>
+										</div><!-- Tab panels -->
+										<div class="tab-content card">
+											{{range .Params.course_details}}
+												{{if eq .name "Description" }}
+											<!--Panel 1-->
+													<div class="tab-pane fade in active show" id='{{replaceRE "(\\s)" "" .name | lower}}' role="tabpanel">
+														<h4 class="desc-title">{{.title}}</h4>
+														{{range .text }}
+															<p>{{. | markdownify }}</p>
+														{{ end }}
+														
+														<h4 class="desc-title">Modules</h4>
+														<div class="image pb-40"><img alt="" src="{{.modules_image}}" width="100%"></div>
+													</div><!--/.Panel 1--><!--Panel 2-->
+												{{ else if eq .name "Curriculum"}}
+													<div class="tab-pane fade" id="curriculum" role="tabpanel">
+														<div class="course-syllabus">
+															{{ range $index, $element :=  .day }}
+																<h4 class="desc-title my-3 fs-20">{{ .heading }}</h4>
+																{{ range $num, $heading := .sub_heading}}
+																	<div class="rs-accordion-style1" id='accordion_{{ $num }}_{{replaceRE "(\\s)" "" $element.heading | lower }}'>
+																		<div class="card">
+																			<div class='card-header {{if and (eq $num 0) (eq $element.heading "Day 1") }} active {{end}}' id='heading_{{ $num }}_{{replaceRE "(\\s)" "" $element.heading | lower }}'>
+																				<h3 aria-controls='collapse_{{ $num }}_{{replaceRE "(\\s)" "" $element.heading | lower }}' aria-expanded='{{if and (eq $num 0) (eq $element.heading "Day 1")}} true {{else}} false {{end}}' class='acdn-title {{if and (eq $num 0) (eq $element.heading "Day 1")}} {{else}} collapsed {{end}}' data-target='#collapse_{{ $num }}_{{replaceRE "(\\s)" "" $element.heading | lower }}' data-toggle="collapse">
+																					<strong class=" fs-20">{{.title}}</strong> 
+																				</h3>
+																			</div>
+																			<div aria-labelledby='heading_{{ $num }}_{{replaceRE "(\\s)" "" $element.heading | lower }}' class='collapse {{if and (eq $num 0) (eq $element.heading "Day 1") }} show {{end}}' data-parent='#accordion_{{ $num }}_{{replaceRE "(\\s)" "" $element.heading | lower }}' id='collapse_{{ $num }}_{{replaceRE "(\\s)" "" $element.heading | lower }}'>
+																				<div class="card-body">
+																					{{ range .info }}
+																						<p class="mb-0">
+																							{{. | markdownify }}
+																						</p>
+																					{{ end }}
+																				</div>
+																			</div>
+																		</div>															
+																	</div>
+																{{ end }}
+															{{ end }}
+														</div>
+													</div>
+												{{ else if eq .name "Register"}}
+													<div class="tab-pane fade" id="register" role="tabpanel">
+                            <h4 class="desc-title">{{.title}}</h4>
+                            <div>
+                              {{range .text }}
+                                <p>{{. | markdownify }}</p>
+                                {{ end }}
+                            </div>
+                            <div class="row">
+                              <div class="col-lg-5 mb-6">
+                                <form action="../sendmail.php" method="POST">
+                                  <input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name" required>
+                                  <input type="email" class="form-control mb-3" id="mail" name="mail" placeholder="Your Email" required>
+                                  <input type="text" class="form-control mb-3" id="company" name="company" placeholder="Your Phone">
+                                  <textarea name="remarks" id="remarks" class="form-control mb-3" placeholder="Your Message"></textarea>
+                                  <button type="submit" name="sendMessage" value="send" class="btn btn-primary">{{ i18n "send" }}</button>
+                                </form>
+                              </div>
+                            </div>
+													</div>
+												{{ else if eq .name "Skills Gained"}}
+													<div class="tab-pane fade" id="skillsgained" role="tabpanel">
+														<h4 class="desc-title">{{.name}}</h4>
+														<div class="skills-gained-tab">
+															{{range .list }}
+																<div>
+                                  {{ . | markdownify }}
+                                </div>
+															{{ end }}
+                            </div>
+													</div><!--/.Panel 1--><!--Panel 2-->
+												{{ end }}
+											{{ end }}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+<!-- related course -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title">{{ i18n "related_course" }}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <!-- course item -->
+      {{ $related := (where site.RegularPages "Type" "course") | intersect (where site.Pages ".Title" "!=" .Title) | union (site.RegularPages.Related . ) | shuffle | first 3}}
+      {{ range first 3 $related }}
+      <div class="col-lg-4 col-sm-6 mb-5">
+        {{ .Render "course"}}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!-- /related course -->
+
+{{ end }}

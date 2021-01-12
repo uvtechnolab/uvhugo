@@ -1,0 +1,55 @@
+{{ define "main" }}
+
+<!-- courses -->
+<section class="section">
+  <div class="container">
+    <!-- course list -->
+    <div class="row justify-content-center">
+      <div class="col-sm-12 text-center filters filter-button-group">
+        <ul>
+          <li class="btn btn-primary btn-sm active" data-filter="*">All</li>
+          {{range $name, $taxonomy := .Site.Taxonomies.category}}
+            <li class="btn btn-primary btn-sm" data-filter=".{{ lower $name }}">{{$name | upper}}</li>
+          {{end}}
+        </ul>
+      </div>
+      <div class="col-sm-12 py-3">
+        <h3 class="text-center">PLANNED TRAININGS</h3>
+      </div>
+      <!-- course item -->
+
+  		<div class="grid" style="width: 100%;">
+
+      {{ range (where .Data.Pages "Section" "course").Reverse }}
+        {{ if eq .Params.course_type "planned trainings"}}
+          <div class="col-lg-4 col-sm-6 mb-5 grid-item {{ range .Params.category }} {{ lower . }} {{end}}">
+            {{ .Render "course" }}
+          </div>
+        {{ end }}
+      {{ end }}
+  		</div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-sm-12 py-3">
+        <h3 class="text-center">TESUQA CAN PROVIDE YOU THESE TRAININGS</h3>
+        <center>
+          <p>Feel free to contact us for more information if you want to book an in-house training.</p>
+        </center>
+      </div>
+  		<div class="grid" style="width: 100%;">
+        {{ $pages :=  where .Data.Pages "Section" "course" }}
+        {{ range $pages.ByParam "id" }}
+          {{ if eq .Params.course_type "available trainings"}}
+          <div class="col-lg-4 col-sm-6 mb-5 grid-item {{ range .Params.category }} {{ lower . }} {{end}}">
+            {{ .Render "course" }}
+          </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+    <!-- /course list -->
+  </div>
+</section>
+<!-- /courses -->
+
+{{ end }}

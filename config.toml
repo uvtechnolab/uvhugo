@@ -1,0 +1,120 @@
+######################## default configuration ####################
+baseURL = "https://tesuqa.netlify.app/"
+title = "tesuqa - software testing services"
+theme = "tesuqa"
+# post pagination
+paginate = "6"
+# post excerpt
+summaryLength = "60"
+# disqus short name
+disqusShortname = "tesuqa" # get your shortname form here : https://disqus.com
+# disable language
+disableLanguages = ["fr"] # desable language from here
+[taxonomies]
+category = "category"
+[permalinks]
+  course = "/:title/"
+  project = "/:title/"
+############################# Plugins ##############################
+
+# CSS Plugins
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/slick/slick.css"
+[[params.plugins.css]]
+link = "plugins/animate/animate.css"
+[[params.plugins.css]]
+link = "plugins/venobox/venobox.css"
+[[params.plugins.css]]
+link = "plugins/themify-icons/themify-icons.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "plugins/jQuery/jquery.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/slick/slick.min.js"
+[[params.plugins.js]]
+link = "plugins/venobox/venobox.min.js"
+#[[params.plugins.js]]
+#link = "plugins/filterizr/jquery.filterizr.min.js"
+[[params.plugins.js]]
+link = "plugins/google-map/gmap.js"
+[[params.plugins.js]]
+link = "https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
+
+
+############################## navigation ###############################
+
+#main menu
+[[menu.main]]
+name = "courses"
+URL = "course"
+weight = 1
+
+[[menu.main]]
+name = "projects"
+URL = "project"
+weight = 2
+
+[[menu.main]]
+name = "blog"
+URL = "blog"
+weight = 3
+
+[[menu.main]]
+name = "consultancy"
+URL = "consultancy"
+weight = 4
+
+# [[menu.main]]
+# name = "Contact"
+# URL = "contact"
+# weight = 5
+
+#################### default parameters ################################
+[params]
+logo = "tesuqa-logo.png"
+# Meta data
+description = "This is meta description"
+author = "Themefisher"
+# contact info
+address = "Address: Schuurhoven 34, B-2360 Out-Turnhout"
+mobile = "Phone Number: +32 479 72 31 52"
+vat_no = "VAT Number: BE 0668.957.629"
+email = "Email: info@tesuqa.com"
+# contact form action
+contact_form_action = "#" # contact form works with https://formspree.io
+# Google Analitycs
+#google_analitycs_id = "" # your id
+
+# Preloader
+[params.preloader]
+enable = false
+preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
+
+# google map
+# [params.map]
+# enable = false
+# gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"
+# map_latitude = "51.5223477"
+# map_longitude = "-0.1622023"
+# map_marker = "images/marker.png" # marker size 37*55 px
+
+# cookies
+[params.cookies]
+enable = true
+expire_days = 2
+
+################################### English language #####################################
+[Languages.en]
+languageName = "En"
+languageCode = "en-us"
+contentDir = "content/english"
+weight = 1
+home = "Home"
+# copyright
+copyright = "Copyright &copy; 2020 tesuqa.com all rights reserved."
+
